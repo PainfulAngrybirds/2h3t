@@ -2,8 +2,10 @@ let num1 = "";
 let num2 = "";
 let valor = "";
 let temsimbolo = false;
+let executa = "";
 
-NAOcliqueAQUI = () => alert("hello corno 🐃🐃🐃🐃🐃🐃🐃🐃🐃🐃🐃");
+
+NAOcliqueAQUI = () => alert("fala bro");
 
 function clicado() {
   alert("Olá !!");
@@ -42,4 +44,25 @@ function digitando(tecla) {
 
   valor += tecla;
   mostrar_display(valor);
+}
+
+function operacao(op){
+  executa = op;
+  num1 = valor;
+  valor = "";
+}
+
+function calcula() {
+  if(executa != "") {
+    num2 = valor;
+    if(executa == "soma") mostrar_display(soma(Number(num1), Number(num2)));
+    if(executa == "sub") mostrar_display(sub(Number(num1), Number(num2)));
+    if(executa == "mult") mostrar_display(mult(Number(num1), Number(num2)));
+    if(executa == "div") mostrar_display(div(Number(num1), Number(num2)));
+    num1 = "";
+    num2 = "";
+    valor = "";
+    temsimbolo = false;
+    executa = "";
+  } 
 }
